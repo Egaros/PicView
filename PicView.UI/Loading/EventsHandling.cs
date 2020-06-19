@@ -21,12 +21,12 @@ using static PicView.WindowLogic;
 
 namespace PicView
 {
-    internal static class Eventshandling
+    public static class Eventshandling
     {
         /// <summary>
         /// Start adding events
         /// </summary>
-        internal static void Go()
+        public static void Go()
         {
             // keyboard and Mouse_Keys Keys
             mainWindow.KeyDown += MainWindow_KeysDown;

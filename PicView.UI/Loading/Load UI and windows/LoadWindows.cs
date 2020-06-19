@@ -5,19 +5,19 @@ using static PicView.Fields;
 
 namespace PicView
 {
-    internal static class LoadWindows
+    public static class LoadWindows
     {
-        internal static AllSettings allSettingsWindow;
-        internal static Info infoWindow;
-        internal static Effects effects;
-        internal static ResizeAndOptimize resizeAndOptimize;
+        public static AllSettings allSettingsWindow;
+        public static Info infoWindow;
+        public static Effects effects;
+        public static ResizeAndOptimize resizeAndOptimize;
 
         #region Windows
 
         /// <summary>
         /// Show Help window in a dialog
         /// </summary>
-        internal static void HelpWindow()
+        public static void HelpWindow()
         {
             if (infoWindow == null)
             {
@@ -48,7 +48,7 @@ namespace PicView
         /// <summary>
         /// Show All Settings window
         /// </summary>
-        internal static void AllSettingsWindow()
+        public static void AllSettingsWindow()
         {
             if (allSettingsWindow == null)
             {
@@ -79,7 +79,7 @@ namespace PicView
         /// <summary>
         /// Show Effects window
         /// </summary>
-        internal static void EffectsWindow()
+        public static void EffectsWindow()
         {
             if (effects == null)
             {
@@ -110,7 +110,7 @@ namespace PicView
         /// <summary>
         /// Show Effects window
         /// </summary>
-        internal static void ResizeAndOptimizeWindow()
+        public static void ResizeAndOptimizeWindow()
         {
             if (resizeAndOptimize == null)
             {

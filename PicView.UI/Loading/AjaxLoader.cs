@@ -3,13 +3,13 @@ using static PicView.UC;
 
 namespace PicView
 {
-    internal static class AjaxLoader
+    public static class AjaxLoader
     {
         //// AjaxLoading
         ///// <summary>
         ///// Loads AjaxLoading and adds it to the window
         ///// </summary>
-        //internal static void LoadAjaxLoading()
+        //public static void LoadAjaxLoading()
         //{
         //    ajaxLoading = new AjaxLoading
         //    {
@@ -23,7 +23,7 @@ namespace PicView
         /// <summary>
         /// Start loading animation
         /// </summary>
-        internal static void AjaxLoadingStart()
+        public static void AjaxLoadingStart()
         {
             if (ajaxLoading.Opacity != 1)
             {
@@ -34,7 +34,7 @@ namespace PicView
         /// <summary>
         /// End loading animation
         /// </summary>
-        internal static void AjaxLoadingEnd()
+        public static void AjaxLoadingEnd()
         {
             AnimationHelper.Fade(ajaxLoading, 0, TimeSpan.FromSeconds(.2));
         }

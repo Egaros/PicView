@@ -7,14 +7,14 @@ using static PicView.ScaleImage;
 using static PicView.Tooltip;
 using static PicView.UC;
 
-namespace PicView
+namespace PicView.UI.Scaling
 {
-    internal static class Scroll
+    public static class Scroll
     {
         /// <summary>
         /// Toggles scroll and displays it with TooltipStle
         /// </summary>
-        internal static bool IsScrollEnabled
+        public static bool IsScrollEnabled
         {
             get { return Properties.Settings.Default.ScrollEnabled; }
             set
@@ -31,13 +31,13 @@ namespace PicView
 
         // AutoScrollSign
 
-        internal static void HideAutoScrollSign()
+        public static void HideAutoScrollSign()
         {
             autoScrollSign.Visibility = Visibility.Collapsed;
             autoScrollSign.Opacity = 0;
         }
 
-        internal static void ShowAutoScrollSign()
+        public static void ShowAutoScrollSign()
         {
             Canvas.SetTop(autoScrollSign, autoScrollOrigin.Value.Y);
             Canvas.SetLeft(autoScrollSign, autoScrollOrigin.Value.X);
@@ -51,7 +51,7 @@ namespace PicView
         /// Starts the auto scroll feature and shows the sign on the ui
         /// </summary>
         /// <param name="e"></param>
-        internal static void StartAutoScroll(MouseButtonEventArgs e)
+        public static void StartAutoScroll(MouseButtonEventArgs e)
         {
             // Don't scroll if not scrollable
             if (mainWindow.Scroller.ComputedVerticalScrollBarVisibility == Visibility.Collapsed)
@@ -68,7 +68,7 @@ namespace PicView
         /// <summary>
         /// Stop auto scroll feature and remove sign from the ui
         /// </summary>
-        internal static void StopAutoScroll()
+        public static void StopAutoScroll()
         {
             autoScrollTimer.Stop();
             //window.ReleaseMouseCapture();
@@ -83,7 +83,7 @@ namespace PicView
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="E"></param>
-        internal static async void AutoScrollTimerEvent(object sender, System.Timers.ElapsedEventArgs E)
+        public static async void AutoScrollTimerEvent(object sender, System.Timers.ElapsedEventArgs E)
         {
             // Error checking
             if (autoScrollPos == null || autoScrollOrigin == null)

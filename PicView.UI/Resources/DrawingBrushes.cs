@@ -3,7 +3,7 @@ using System.Windows.Media;
 
 namespace PicView
 {
-    internal static class DrawingBrushes
+    public static class DrawingBrushes
     {
         #region DrawingBrush
 

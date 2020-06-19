@@ -3,23 +3,23 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
-using static PicView.Fields;
-using static PicView.Navigation;
-using static PicView.Scroll;
-using static PicView.SetTitle;
+using static PicView.Library.Fields;
+using static PicView.Library.Utilities;
+using static PicView.Navigation.ChangeImage;
 using static PicView.Tooltip;
 using static PicView.UC;
-using static PicView.Utilities;
-using static PicView.WindowLogic;
+using static PicView.UI.Scaling.Scroll;
+using static PicView.UI.SetTitle;
+using static PicView.UI.WindowLogic;
 
-namespace PicView
+namespace PicView.UI.Scaling
 {
-    internal static class Pan_and_Zoom
+    public static class Pan_and_Zoom
     {
         /// <summary>
         /// Returns zoom percentage. if 100%, return empty string
         /// </summary>
-        internal static string ZoomPercentage
+        public static string ZoomPercentage
         {
             get
             {
@@ -39,11 +39,11 @@ namespace PicView
         /// <param name="width"></param>
         /// <param name="height"></param>
         /// <returns></returns>
-        internal static string StringAspect(int width, int height)
+        public static string StringAspect(int width, int height)
         {
             var gcd = GCD(width, height);
-            var x = (width / gcd);
-            var y = (height / gcd);
+            var x = width / gcd;
+            var y = height / gcd;
 
             if (x == width && y == height || x > 16 || y > 9)
             {
@@ -59,13 +59,15 @@ namespace PicView
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        internal static void Zoom_img_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        public static void Zoom_img_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (!isZoomed)
             {
                 MoveAlt(sender, e);
                 return;
             }
+
+            var mainWindow = (Windows.MainWindow)Application.Current.MainWindow;
 
             // Fix focus
             EditTitleBar.Refocus();
@@ -101,7 +103,7 @@ namespace PicView
             }
         }
 
-        internal static void Bg_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        public static void Bg_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             // Fix focus
             EditTitleBar.Refocus();
@@ -111,7 +113,7 @@ namespace PicView
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        internal static void Zoom_img_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        public static void Zoom_img_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             // Stop autoscrolling or dragging image
             if (AutoScrolling)
@@ -120,6 +122,7 @@ namespace PicView
             }
             else
             {
+                var mainWindow = (Windows.MainWindow)Application.Current.MainWindow;
                 mainWindow.img.ReleaseMouseCapture();
             }
         }
@@ -130,8 +133,10 @@ namespace PicView
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        internal static void Zoom_img_MouseMove(object sender, MouseEventArgs e)
+        public static void Zoom_img_MouseMove(object sender, MouseEventArgs e)
         {
+            var mainWindow = (Windows.MainWindow)Application.Current.MainWindow;
+
             if (AutoScrolling)
             {
                 // Start automainWindow.Scroller and report position
@@ -158,7 +163,7 @@ namespace PicView
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        internal static void Zoom_img_MouseWheel(object sender, MouseWheelEventArgs e)
+        public static void Zoom_img_MouseWheel(object sender, MouseWheelEventArgs e)
         {
             // Disable normal scroll, so we can use our own values
             e.Handled = true;
@@ -175,6 +180,7 @@ namespace PicView
                 }
                 else
                 {
+                    var mainWindow = (Windows.MainWindow)Application.Current.MainWindow;
                     // Scroll vertical when scroll enabled
                     var zoomSpeed = 45;
                     if (e.Delta > 0)
@@ -208,8 +214,9 @@ namespace PicView
         /// Manipulates the required elements to allow zooming
         /// by modifying ScaleTransform and TranslateTransform
         /// </summary>
-        internal static void InitializeZoom()
+        public static void InitializeZoom()
         {
+            var mainWindow = (Windows.MainWindow)Application.Current.MainWindow;
             // Set center
             //mainWindow.img.RenderTransformOrigin = new Point(0.5, 0.5); // Already set in xaml
 
@@ -233,8 +240,10 @@ namespace PicView
         /// <summary>
         /// Resets element values to their loaded values
         /// </summary>
-        internal static void ResetZoom()
+        public static void ResetZoom()
         {
+            var mainWindow = (Windows.MainWindow)Application.Current.MainWindow;
+
             if (mainWindow.img.Source == null) { return; }
 
             // Scale to default
@@ -271,7 +280,7 @@ namespace PicView
         /// </summary>
         /// <param name="i"></param>
         /// <param name="zoomMode"></param>
-        internal static void Zoom(int i, bool zoomMode)
+        public static void Zoom(int i, bool zoomMode)
         {
             /// Don't zoom when gallery is open
             if (picGallery != null)
@@ -281,6 +290,8 @@ namespace PicView
                     return;
                 }
             }
+
+            var mainWindow = (Windows.MainWindow)Application.Current.MainWindow;
 
             /// Scales the window with img.LayoutTransform
             if (zoomMode)

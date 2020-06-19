@@ -1,17 +1,18 @@
 ﻿using System;
-using static PicView.Fields;
 using static PicView.Scroll;
 using static PicView.WindowLogic;
+using System.Windows;
 
-namespace PicView
+namespace PicView.UI.Scaling
 {
-    internal static class ScaleImage
+    public static class ScaleImage
     {
         /// <summary>
         /// Tries to call Zoomfit with additional error checking
         /// </summary>
-        internal static void TryFitImage()
+        public static void TryFitImage()
         {
+            var mainWindow = (Windows.MainWindow)Application.Current.MainWindow;
             if (FreshStartup) { return; }
 
             if (Pics != null)
@@ -54,7 +55,7 @@ namespace PicView
         /// <summary>
         /// Tries to call Zoomfit with specified path
         /// </summary>
-        internal static void TryFitImage(string source)
+        public static void TryFitImage(string source)
         {
             if (string.IsNullOrWhiteSpace(source)) { return; }
 
@@ -71,7 +72,7 @@ namespace PicView
         /// </summary>
         /// <param name="width">The pixel width of the image</param>
         /// <param name="height">The pixel height of the image</param>
-        internal static void FitImage(double width, double height)
+        public static void FitImage(double width, double height)
         {
             if (width <= 0 || height <= 0) { return; }
 

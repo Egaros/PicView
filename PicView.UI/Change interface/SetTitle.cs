@@ -1,12 +1,13 @@
 ﻿using System.IO;
 using System.Text;
-using static PicView.Fields;
-using static PicView.FileFunctions;
-using static PicView.Pan_and_Zoom;
+using static PicView.UI.Scaling.Pan_and_Zoom;
+using static PicView.Library.Fields;
+using PicView.FileHandling;
+using System.Windows;
 
-namespace PicView
+namespace PicView.UI
 {
-    internal static class SetTitle
+    public static class SetTitle
     {
         /// <summary>
         /// Returns string with file name, folder position,
@@ -16,11 +17,11 @@ namespace PicView
         /// <param name="height"></param>
         /// <param name="index"></param>
         /// <returns></returns>
-        internal static string[] TitleString(int width, int height, int index)
+        public static string[] TitleString(int width, int height, int index)
         {
             var s1 = new StringBuilder(90);
             s1.Append(Path.GetFileName(Pics[index])).Append(" ").Append(index + 1).Append("/").Append(Pics.Count).Append(" files")
-                    .Append(" (").Append(width).Append(" x ").Append(height).Append(StringAspect(width, height)).Append(GetSizeReadable(new FileInfo(Pics[index]).Length));
+                    .Append(" (").Append(width).Append(" x ").Append(height).Append(StringAspect(width, height)).Append(FileFunctions.GetSizeReadable(new FileInfo(Pics[index]).Length));
 
             if (!string.IsNullOrEmpty(ZoomPercentage))
             {
@@ -46,8 +47,10 @@ namespace PicView
         /// <param name="height"></param>
         /// <param name="index"></param>
         /// <returns></returns>
-        internal static void SetTitleString(int width, int height, int index)
+        public static void SetTitleString(int width, int height, int index)
         {
+            // TODO use get setters and binding instead
+            var mainWindow = (Windows.MainWindow)Application.Current.MainWindow;
             var titleString = TitleString(width, height, index);
             mainWindow.Title = titleString[0];
             mainWindow.Bar.Text = titleString[1];
@@ -62,7 +65,7 @@ namespace PicView
         /// <param name="height"></param>
         /// <param name="path"></param>
         /// <returns></returns>
-        internal static string[] TitleString(int width, int height, string path)
+        public static string[] TitleString(int width, int height, string path)
         {
             var s1 = new StringBuilder();
             s1.Append(path).Append(" (").Append(width).Append(" x ").Append(height).Append(StringAspect(width, height));
@@ -89,8 +92,9 @@ namespace PicView
         /// <param name="height"></param>
         /// <param name="path"></param>
         /// <returns></returns>
-        internal static void SetTitleString(int width, int height, string path)
+        public static void SetTitleString(int width, int height, string path)
         {
+            var mainWindow = (Windows.MainWindow)Application.Current.MainWindow;
             var titleString = TitleString(width, height, path);
             mainWindow.Title = titleString[0];
             mainWindow.Bar.Text = titleString[1];

@@ -13,9 +13,9 @@ using System.Diagnostics;
 
 namespace PicView
 {
-    internal static class ContextMenus
+    public static class ContextMenus
     {
-        internal static void AddContextMenus()
+        public static void AddContextMenus()
         {
             // Add main contextmenu
             cm = new ContextMenu();

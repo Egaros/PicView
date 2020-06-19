@@ -5,7 +5,7 @@ using static PicView.Fields;
 
 namespace PicView
 {
-    internal static class MouseOverAnimations
+    public static class MouseOverAnimations
     {
 
         /*
@@ -18,7 +18,7 @@ namespace PicView
         #region logo
 
         // Logo Mouse Over
-        //internal static void LogoMouseOver(object sender, MouseEventArgs e)
+        //public static void LogoMouseOver(object sender, MouseEventArgs e)
         //{
         //    AnimationHelper.MouseEnterColorEvent(255, 245, 245, 245, pBrush, false);
         //    AnimationHelper.MouseEnterColorEvent(255, 245, 245, 245, iBrush, false);
@@ -29,7 +29,7 @@ namespace PicView
         //    AnimationHelper.MouseEnterColorEvent(255, 245, 245, 245, wBrush, false);
         //}
 
-        //internal static void LogoMouseLeave(object sender, MouseEventArgs e)
+        //public static void LogoMouseLeave(object sender, MouseEventArgs e)
         //{
         //    AnimationHelper.MouseLeaveColorEvent(255, 245, 245, 245, pBrush, false);
         //    AnimationHelper.MouseLeaveColorEvent(255, 245, 245, 245, iBrush, false);
@@ -40,7 +40,7 @@ namespace PicView
         //    AnimationHelper.MouseLeaveColorEvent(255, 245, 245, 245, wBrush, false);
         //}
 
-        //internal static void LogoMouseButtonDown(object sender, MouseButtonEventArgs e)
+        //public static void LogoMouseButtonDown(object sender, MouseButtonEventArgs e)
         //{
         //    AnimationHelper.PreviewMouseLeftButtonDownColorEvent(pBrush, false);
         //    AnimationHelper.PreviewMouseLeftButtonDownColorEvent(iBrush, false);
@@ -55,12 +55,12 @@ namespace PicView
 
         #region 1x
 
-        internal static void PreviewMouseButtonDownAnim(Brush brush, bool alpha = false)
+        public static void PreviewMouseButtonDownAnim(Brush brush, bool alpha = false)
         {
             AnimationHelper.PreviewMouseLeftButtonDownColorEvent(brush, alpha);
         }
 
-        internal static void ButtonMouseOverAnim(Brush brush, bool transparent = false, bool alpha = false)
+        public static void ButtonMouseOverAnim(Brush brush, bool transparent = false, bool alpha = false)
         {
             if (transparent)
             {
@@ -79,7 +79,7 @@ namespace PicView
             }
         }
 
-        internal static void ButtonMouseLeaveAnim(Brush brush, bool transparent = false, bool alpha = false)
+        public static void ButtonMouseLeaveAnim(Brush brush, bool transparent = false, bool alpha = false)
         {
             if (transparent)
             {
@@ -98,7 +98,7 @@ namespace PicView
             }
         }
 
-        internal static void ButtonMouseLeaveAnimBgColor(Brush brush, bool alpha = false)
+        public static void ButtonMouseLeaveAnimBgColor(Brush brush, bool alpha = false)
         {
             AnimationHelper.MouseLeaveColorEvent(
                 backgroundBorderColor.A,
@@ -114,19 +114,19 @@ namespace PicView
 
         #region 2x
 
-        internal static void PreviewMouseButtonDownAnim(Brush brush, Brush brush2, bool alpha = false)
+        public static void PreviewMouseButtonDownAnim(Brush brush, Brush brush2, bool alpha = false)
         {
             AnimationHelper.PreviewMouseLeftButtonDownColorEvent(brush, alpha);
             AnimationHelper.PreviewMouseLeftButtonDownColorEvent(brush2, alpha);
         }
 
-        internal static void ButtonMouseOverAnim(Brush brush, Brush brush2, bool transparent = false, bool alpha = false)
+        public static void ButtonMouseOverAnim(Brush brush, Brush brush2, bool transparent = false, bool alpha = false)
         {
             ButtonMouseOverAnim(brush, transparent, alpha);
             ButtonMouseOverAnim(brush2, transparent, alpha);
         }
 
-        internal static void ButtonMouseLeaveAnim(Brush brush, Brush brush2, bool transparent = false, bool alpha = false)
+        public static void ButtonMouseLeaveAnim(Brush brush, Brush brush2, bool transparent = false, bool alpha = false)
         {
             ButtonMouseLeaveAnim(brush, transparent, alpha);
             ButtonMouseLeaveAnim(brush2, transparent, alpha);
@@ -136,21 +136,21 @@ namespace PicView
 
         #region 3x
 
-        internal static void PreviewMouseButtonDownAnim(Brush brush, Brush brush2, Brush brush3, bool alpha = false)
+        public static void PreviewMouseButtonDownAnim(Brush brush, Brush brush2, Brush brush3, bool alpha = false)
         {
             AnimationHelper.PreviewMouseLeftButtonDownColorEvent(brush, alpha);
             AnimationHelper.PreviewMouseLeftButtonDownColorEvent(brush2, alpha);
             AnimationHelper.PreviewMouseLeftButtonDownColorEvent(brush3, alpha);
         }
 
-        internal static void ButtonMouseOverAnim(Brush brush, Brush brush2, Brush brush3, bool transparent = false, bool alpha = false)
+        public static void ButtonMouseOverAnim(Brush brush, Brush brush2, Brush brush3, bool transparent = false, bool alpha = false)
         {
             ButtonMouseOverAnim(brush, transparent, alpha);
             ButtonMouseOverAnim(brush2, transparent, alpha);
             ButtonMouseOverAnim(brush3, transparent, alpha);
         }
 
-        internal static void ButtonMouseLeaveAnim(Brush brush, Brush brush2, Brush brush3, bool transparent = false, bool alpha = false)
+        public static void ButtonMouseLeaveAnim(Brush brush, Brush brush2, Brush brush3, bool transparent = false, bool alpha = false)
         {
             ButtonMouseLeaveAnim(brush, transparent, alpha);
             ButtonMouseLeaveAnim(brush2, transparent, alpha);

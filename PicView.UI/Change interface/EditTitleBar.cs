@@ -4,11 +4,11 @@ using static PicView.Fields;
 
 namespace PicView
 {
-    internal static class EditTitleBar
+    public static class EditTitleBar
     {
         private static string backupTitle;
 
-        internal static void Bar_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        public static void Bar_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (Pics != null && Pics.Count == 0)
             {
@@ -16,7 +16,7 @@ namespace PicView
             }
         }
 
-        internal static void EditTitleBar_Text()
+        public static void EditTitleBar_Text()
         {
             if (Pics == null || !Properties.Settings.Default.ShowInterface || Pics.Count == 0)
             {
@@ -33,7 +33,7 @@ namespace PicView
             }
         }
 
-        internal static void EditTitleBar_Text(object sender, KeyboardFocusChangedEventArgs e)
+        public static void EditTitleBar_Text(object sender, KeyboardFocusChangedEventArgs e)
         {
             if (Pics == null || !Properties.Settings.Default.ShowInterface || Pics.Count == 0)
             {
@@ -46,7 +46,7 @@ namespace PicView
             mainWindow.Bar.Text = Pics[FolderIndex];
         }
 
-        internal static void SelectFileName()
+        public static void SelectFileName()
         {
             var filename = Path.GetFileName(Pics[FolderIndex]);
             var start = Pics[FolderIndex].Length - filename.Length;
@@ -54,7 +54,7 @@ namespace PicView
             mainWindow.Bar.Bar.Select(start, end);
         }
 
-        internal static void HandleRename()
+        public static void HandleRename()
         {
             if (FileFunctions.RenameFile(Pics[FolderIndex], mainWindow.Bar.Text))
             {
@@ -69,7 +69,7 @@ namespace PicView
             }
         }
 
-        internal static void Refocus()
+        public static void Refocus()
         {
             if (!mainWindow.Bar.IsFocused)
             {

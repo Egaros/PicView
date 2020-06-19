@@ -1,24 +1,21 @@
-﻿using PicView.Windows;
+﻿using PicView.UI.Scaling;
+using PicView.Windows;
 using System;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
-using static PicView.Fields;
 using static PicView.HideInterfaceLogic;
-using static PicView.UC;
-using static PicView.Utilities;
-using static PicView.ScaleImage;
+using static PicView.UC; using static PicView.OS_Integration.MonitorSize;
 
-namespace PicView
+namespace PicView.UI
 {
-    internal static class WindowLogic
+    public static class WindowLogic
     {
-        internal static FakeWindow fakeWindow;
+        public static FakeWindow fakeWindow;
 
         /// <summary>
         /// Set whether to fit window to image or image to window
         /// </summary>
-        internal static bool SetWindowBehaviour
+        public static bool SetWindowBehaviour
         {
             get
             {
@@ -30,6 +27,7 @@ namespace PicView
 
                 if (value)
                 {
+                    var mainWindow = (Windows.MainWindow)Application.Current.MainWindow;
                     mainWindow.SizeToContent = SizeToContent.WidthAndHeight;
                     mainWindow.ResizeMode = ResizeMode.CanMinimize;
 
@@ -43,6 +41,7 @@ namespace PicView
                 }
                 else
                 {
+                    var mainWindow = (Windows.MainWindow)Application.Current.MainWindow;
                     mainWindow.SizeToContent = SizeToContent.Manual;
                     mainWindow.ResizeMode = ResizeMode.CanResizeWithGrip;
 
@@ -53,7 +52,7 @@ namespace PicView
                 }
 
                 // Resize it
-                TryFitImage();
+                ScaleImage.TryFitImage();
             }
         }
 
@@ -64,13 +63,13 @@ namespace PicView
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        internal static void Move(object sender, MouseButtonEventArgs e)
+        public static void Move(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton != MouseButton.Left)
             {
                 return;
             }
-
+            var mainWindow = (Windows.MainWindow)Application.Current.MainWindow;
             if (mainWindow.Bar.Bar.IsFocused)
             {
                 if (e.ClickCount == 2)
@@ -101,14 +100,14 @@ namespace PicView
 
                 // Update info for possible new screen, needs more engineering
                 // Seems to work
-                MonitorInfo = MonitorSize.GetMonitorSize();
+               OS_Integration.MonitorSize.MonitorInfo = OS_Integration.MonitorSize.GetMonitorSize();
             }
         }
 
         /// <summary>
         /// Move alternative window
         /// </summary>
-        internal static void MoveAlt(object sender, MouseButtonEventArgs e)
+        public static void MoveAlt(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton != MouseButton.Left)
             {
@@ -117,6 +116,7 @@ namespace PicView
 
             if (!Properties.Settings.Default.ShowInterface && !SetWindowBehaviour && e.LeftButton == MouseButtonState.Pressed)
             {
+                var mainWindow = (Windows.MainWindow)Application.Current.MainWindow;
                 mainWindow.DragMove();
             }
         }
@@ -127,8 +127,9 @@ namespace PicView
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        internal static void Restore_From_Move(object sender, MouseEventArgs e)
+        public static void Restore_From_Move(object sender, MouseEventArgs e)
         {
+            var mainWindow = (Windows.MainWindow)Application.Current.MainWindow;
             if (mainWindow.WindowState == WindowState.Maximized && e.LeftButton == MouseButtonState.Pressed)
             {
                 try
@@ -145,8 +146,9 @@ namespace PicView
         /// <summary>
         /// Maximizes/restore window
         /// </summary>
-        internal static void Maximize_Restore()
+        public static void Maximize_Restore()
         {
+            var mainWindow = (Windows.MainWindow)Application.Current.MainWindow;
             // Maximize
             if (mainWindow.WindowState == WindowState.Normal)
             {
@@ -160,8 +162,9 @@ namespace PicView
             }
         }
 
-        internal static void Maximize()
+        public static void Maximize()
         {
+            var mainWindow = (Windows.MainWindow)Application.Current.MainWindow;
             // Update new setting and sizing
             SetWindowBehaviour = false;
             Properties.Settings.Default.Maximized = true;
@@ -172,8 +175,9 @@ namespace PicView
             mainWindow.LowerBar.Height = 44; // Seems to fix UI going below Windows taskbar
         }
 
-        internal static void Restore()
+        public static void Restore()
         {
+            var mainWindow = (Windows.MainWindow)Application.Current.MainWindow;
             // Update new setting and sizing
             SetWindowBehaviour = true;
             Properties.Settings.Default.Maximized = false;
@@ -198,14 +202,16 @@ namespace PicView
                 CenterWindowOnScreen();
             }
             
-            UpdateColor();
+            ConfigColors.UpdateColor();
         }
 
         /// <summary>
         /// Fullscreen/restore window
         /// </summary>
-        internal static void Fullscreen_Restore(bool startup = false)
+        public static void Fullscreen_Restore(bool startup = false)
         {
+            var mainWindow = (Windows.MainWindow)Application.Current.MainWindow;
+
             if (startup || !Properties.Settings.Default.Fullscreen)
             {
                 if (!SetWindowBehaviour)
@@ -231,7 +237,7 @@ namespace PicView
 
                 mainWindow.Topmost = true;
 
-                UpdateColor(true);
+                ConfigColors.UpdateColor(true);
             }
             else
             {
@@ -287,8 +293,8 @@ namespace PicView
                     
                 }
 
-                TryFitImage();
-                UpdateColor(); // Regain border              
+                ScaleImage.TryFitImage();
+                ConfigColors.UpdateColor(); // Regain border              
 
                 Properties.Settings.Default.Fullscreen = false;
             }
@@ -298,8 +304,9 @@ namespace PicView
         /// <summary>
         /// Centers on the current monitor
         /// </summary>
-        internal static void CenterWindowOnScreen()
+        public static void CenterWindowOnScreen()
         {
+            var mainWindow = (Windows.MainWindow)Application.Current.MainWindow;
             //move to the centre
             mainWindow.Left = (((MonitorInfo.WorkArea.Width - (mainWindow.Width * MonitorInfo.DpiScaling)) / 2) + (MonitorInfo.WorkArea.Left * MonitorInfo.DpiScaling));
             mainWindow.Top = ((MonitorInfo.WorkArea.Height - (mainWindow.Height * MonitorInfo.DpiScaling)) / 2) + (MonitorInfo.WorkArea.Top * MonitorInfo.DpiScaling);

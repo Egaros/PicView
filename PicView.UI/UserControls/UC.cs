@@ -5,23 +5,23 @@ using System.Windows.Media.Animation;
 
 namespace PicView
 {
-    internal static class UC
+    public static class UC
     {
-        internal static ImageSettings imageSettingsMenu;
-        internal static FileMenu fileMenu;
-        internal static QuickSettingsMenu quickSettingsMenu;
-        internal static ToolsAndEffectsMenu toolsAndEffectsMenu;
-        internal static AjaxLoading ajaxLoading;
-        internal static SexyToolTip sexyToolTip;
-        internal static AutoScrollSign autoScrollSign;
-        internal static ClickArrow clickArrowLeft;
-        internal static ClickArrow clickArrowRight;
-        internal static X2 x2;
-        internal static Minus minus;
-        internal static PicGallery picGallery;
-        internal static GalleryShortcut galleryShortcut;
-        internal static BadImage badImage;
-        internal static CroppingTool cropppingTool;
+        public static ImageSettings imageSettingsMenu;
+        public static FileMenu fileMenu;
+        public static QuickSettingsMenu quickSettingsMenu;
+        public static ToolsAndEffectsMenu toolsAndEffectsMenu;
+        public static AjaxLoading ajaxLoading;
+        public static SexyToolTip sexyToolTip;
+        public static AutoScrollSign autoScrollSign;
+        public static ClickArrow clickArrowLeft;
+        public static ClickArrow clickArrowRight;
+        public static X2 x2;
+        public static Minus minus;
+        public static PicGallery picGallery;
+        public static GalleryShortcut galleryShortcut;
+        public static BadImage badImage;
+        public static CroppingTool cropppingTool;
 
         private static bool imageSettingsMenuOpen;
         private static bool fileMenuOpen;
@@ -33,7 +33,7 @@ namespace PicView
         /// <summary>
         /// Toggles whether ImageSettingsMenu is open or not with a fade animation
         /// </summary>
-        internal static bool ImageSettingsMenuOpen
+        public static bool ImageSettingsMenuOpen
         {
             get { return imageSettingsMenuOpen; }
             set
@@ -61,7 +61,7 @@ namespace PicView
         /// <summary>
         /// Toggles whether FileMenu is open or not with a fade animation
         /// </summary>
-        internal static bool FileMenuOpen
+        public static bool FileMenuOpen
         {
             get { return fileMenuOpen; }
             set
@@ -89,7 +89,7 @@ namespace PicView
         /// <summary>
         /// Toggles whether QuickSettingsMenu is open or not with a fade animation
         /// </summary>
-        internal static bool QuickSettingsMenuOpen
+        public static bool QuickSettingsMenuOpen
         {
             get { return quickSettingsMenuOpen; }
             set
@@ -118,7 +118,7 @@ namespace PicView
         /// <summary>
         /// Toggles whether FunctionsMenu is open or not with a fade animation
         /// </summary>
-        internal static bool ToolsAndEffectsMenuOpen
+        public static bool ToolsAndEffectsMenuOpen
         {
             get { return toolsAndEffectsMenuOpen; }
             set
@@ -147,7 +147,7 @@ namespace PicView
         /// Check if any UserControls are open
         /// </summary>
         /// <returns></returns>
-        internal static bool UserControls_Open()
+        public static bool UserControls_Open()
         {
             if (ImageSettingsMenuOpen)
             {
@@ -175,7 +175,7 @@ namespace PicView
         /// <summary>
         /// Closes usercontrol menus
         /// </summary>
-        internal static void Close_UserControls()
+        public static void Close_UserControls()
         {
             if (ImageSettingsMenuOpen)
             {
@@ -201,7 +201,7 @@ namespace PicView
         /// <summary>
         /// Closes usercontrol menus
         /// </summary>
-        internal static void Close_UserControls(object sender, RoutedEventArgs e)
+        public static void Close_UserControls(object sender, RoutedEventArgs e)
         {
             Close_UserControls();
         }
@@ -211,7 +211,7 @@ namespace PicView
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        internal static void Toggle_open_menu(object sender, RoutedEventArgs e)
+        public static void Toggle_open_menu(object sender, RoutedEventArgs e)
         {
             if (GalleryFunctions.IsOpen)
             {
@@ -241,7 +241,7 @@ namespace PicView
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        internal static void Toggle_image_menu(object sender, RoutedEventArgs e)
+        public static void Toggle_image_menu(object sender, RoutedEventArgs e)
         {
             if (GalleryFunctions.IsOpen)
             {
@@ -271,7 +271,7 @@ namespace PicView
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        internal static void Toggle_quick_settings_menu(object sender, RoutedEventArgs e)
+        public static void Toggle_quick_settings_menu(object sender, RoutedEventArgs e)
         {
             if (GalleryFunctions.IsOpen)
             {
@@ -301,7 +301,7 @@ namespace PicView
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        internal static void Toggle_Functions_menu(object sender, RoutedEventArgs e)
+        public static void Toggle_Functions_menu(object sender, RoutedEventArgs e)
         {
             if (GalleryFunctions.IsOpen)
             {

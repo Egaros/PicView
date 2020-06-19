@@ -5,12 +5,12 @@ using static PicView.Scroll;
 
 namespace PicView
 {
-    internal static class Timers
+    public static class Timers
     {
         #region Add Timers
 
         // Add timers
-        internal static void AddTimers()
+        public static void AddTimers()
         {
             autoScrollTimer = new Timer()
             {

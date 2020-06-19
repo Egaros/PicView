@@ -14,7 +14,7 @@ using static PicView.Tooltip;
 
 namespace PicView
 {
-    internal static class DragAndDrop
+    public static class DragAndDrop
     {
         internal const string DragOverString = "Drop to load image";
 
@@ -48,7 +48,7 @@ namespace PicView
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        internal static void Image_DragEnter(object sender, DragEventArgs e)
+        public static void Image_DragEnter(object sender, DragEventArgs e)
         {
             // Error handling
             if (!e.Data.GetDataPresent(DataFormats.FileDrop))
@@ -94,7 +94,7 @@ namespace PicView
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        internal static void Image_DragLeave(object sender, DragEventArgs e)
+        public static void Image_DragLeave(object sender, DragEventArgs e)
         {
             // TODO fix base64 image not returning to normal
 
@@ -114,7 +114,7 @@ namespace PicView
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        internal static void Image_Drop(object sender, DragEventArgs e)
+        public static void Image_Drop(object sender, DragEventArgs e)
         {
             if (e.Data.GetData(DataFormats.Html) != null)
             {
@@ -180,7 +180,7 @@ namespace PicView
             }
         }
 
-        internal static void DragFile(object sender, MouseButtonEventArgs e)
+        public static void DragFile(object sender, MouseButtonEventArgs e)
         {
             if (Keyboard.Modifiers != ModifierKeys.Control || mainWindow.img.Source == null)
             {

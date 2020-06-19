@@ -1,0 +1,213 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ShaderEffects\PsEffects\BandedSwirlEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\BandsEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\BloomEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\ColorToneEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\DirectionalBlurEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\EmbossedEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\FrostyOutlineEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\GlassTilesEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\GloomEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\GrayscaleEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\GrowablePoissonDiskEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\InvertColorEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\MagnifySmoothEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\MonochromeEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\MultiInput_ColorChannelsEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\OldMovieEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\PaperFoldEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\PivotEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\PixelateEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\PixelateOutTransitionEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\RadGradientEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\ReflectionEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\RippleEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\SharpenEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\SketchGraniteEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\SketchPencilStrokeEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\SplinterEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\StarGeneratorEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\SwirlEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\TelescopicBlurPS3Effect.ps" />
+    <None Remove="ShaderEffects\PsEffects\TilerEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\ToneMappingEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\ToonShaderEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\Transition_BandedSwirlEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\Transition_BlindsEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\Transition_BloodEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\Transition_CircleRevealEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\Transition_CircleStretchEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\Transition_CircularBlurEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\Transition_CloudRevealEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\Transition_CrumbleEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\Transition_RippleEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\Transition_WaterEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\TransparentAlternatingPixelsEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\TransparentAlternatingPixelsMultipliedEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\TransparentAlternatingScanlinesEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\UnderwaterEffect.ps" />
+    <None Remove="ShaderEffects\PsEffects\WaveWarperEffect.ps" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ShaderEffects\PsEffects\BandedSwirlEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\BandsEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\BloomEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\ColorToneEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\DirectionalBlurEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\EmbossedEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\FrostyOutlineEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\GlassTilesEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\GloomEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\GrayscaleEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\GrowablePoissonDiskEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\InvertColorEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\MagnifySmoothEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\MonochromeEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\MultiInput_ColorChannelsEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\OldMovieEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\PaperFoldEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\PivotEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\PixelateEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\PixelateOutTransitionEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\RadGradientEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\ReflectionEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\RippleEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\SharpenEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\SketchGraniteEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\SketchPencilStrokeEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\SplinterEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\StarGeneratorEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\SwirlEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\TelescopicBlurPS3Effect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\TilerEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\ToneMappingEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\ToonShaderEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\Transition_BandedSwirlEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\Transition_BlindsEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\Transition_BloodEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\Transition_CircleRevealEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\Transition_CircleStretchEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\Transition_CircularBlurEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\Transition_CloudRevealEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\Transition_CrumbleEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\Transition_RippleEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\Transition_WaterEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\TransparentAlternatingPixelsEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\TransparentAlternatingPixelsMultipliedEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\TransparentAlternatingScanlinesEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\UnderwaterEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShaderEffects\PsEffects\WaveWarperEffect.ps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

@@ -5,7 +5,7 @@ using static PicView.UC;
 
 namespace PicView
 {
-    internal static class Tooltip
+    public static class Tooltip
     {
         /// <summary>
         /// Shows a black tooltip on screen in a given time
@@ -13,7 +13,7 @@ namespace PicView
         /// <param name="message">The message to display</param>
         /// <param name="center">If centered or on bottom</param>
         /// <param name="time">How long until it fades away</param>
-        internal static void ShowTooltipMessage(object message, bool center, TimeSpan time)
+        public static void ShowTooltipMessage(object message, bool center, TimeSpan time)
         {
             if (sexyToolTip == null)
             {
@@ -44,7 +44,7 @@ namespace PicView
         /// Shows a black tooltip on screen for a small time
         /// </summary>
         /// <param name="message">The message to display</param>
-        internal static void ShowTooltipMessage(object message, bool center = false)
+        public static void ShowTooltipMessage(object message, bool center = false)
         {
             ShowTooltipMessage(message, center, TimeSpan.FromSeconds(1));
         }
@@ -52,7 +52,7 @@ namespace PicView
         /// <summary>
         /// Hides the Messagebox ToolTipStyle
         /// </summary>
-        internal static void CloseToolTipMessage()
+        public static void CloseToolTipMessage()
         {
             sexyToolTip.Visibility = Visibility.Hidden;
         }

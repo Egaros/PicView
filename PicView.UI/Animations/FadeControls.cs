@@ -4,13 +4,13 @@ using static PicView.UC;
 
 namespace PicView
 {
-    internal static class FadeControls
+    public static class FadeControls
     {
         /// <summary>
         /// Hides/shows interface elements with a fade animation
         /// </summary>
         /// <param name="show"></param>
-        internal static async void FadeControlsAsync(bool show, double time = .5)
+        public static async void FadeControlsAsync(bool show, double time = .5)
         {
             await mainWindow.Dispatcher.BeginInvoke((Action)(() =>
             {
@@ -96,7 +96,7 @@ namespace PicView
         /// Find scrollbar and start fade animation
         /// </summary>
         /// <param name="show"></param>
-        internal static void ScrollbarFade(bool show)
+        public static void ScrollbarFade(bool show)
         {
             var s = mainWindow.Scroller.Template.FindName("PART_VerticalScrollBar", mainWindow.Scroller) as System.Windows.Controls.Primitives.ScrollBar;
 

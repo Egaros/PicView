@@ -2,15 +2,15 @@
 using System.Windows.Media;
 using static PicView.Fields;
 
-namespace PicView
+namespace PicView.UI.Scaling
 {
-    internal static class Rotate_and_Flip
+    public static class Rotate_and_Flip
     {
         /// <summary>
         /// Rotates the image the specified degrees
         /// </summary>
         /// <param name="r"></param>
-        internal static void Rotate(int r)
+        public static void Rotate(int r)
         {
             if (mainWindow.img.Source == null)
             {
@@ -41,7 +41,7 @@ namespace PicView
         /// </summary>
         /// <param name="right"></param>
         // https://stackoverflow.com/a/62136307/13646636
-        internal static void Rotate(bool right)
+        public static void Rotate(bool right)
         {
             if (mainWindow.img.Source == null ||
                 Properties.Settings.Default.PicGallery == 1 && GalleryFunctions.IsOpen)
@@ -65,7 +65,7 @@ namespace PicView
         /// <summary>
         /// Flips the image
         /// </summary>
-        internal static void Flip()
+        public static void Flip()
         {
             if (mainWindow.img.Source == null)
             {

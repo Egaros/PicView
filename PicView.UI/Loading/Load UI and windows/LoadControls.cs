@@ -6,14 +6,14 @@ using static PicView.UC;
 
 namespace PicView
 {
-    internal static class LoadControls
+    public static class LoadControls
     {
         // Load controls
 
         /// <summary>
         /// Loads ClickArrow and adds it to the window
         /// </summary>
-        internal static void LoadClickArrow(bool right)
+        public static void LoadClickArrow(bool right)
         {
             if (right)
             {
@@ -48,7 +48,7 @@ namespace PicView
         /// <summary>
         /// Loads x2 and adds it to the window
         /// </summary>
-        internal static void Loadx2()
+        public static void Loadx2()
         {
             x2 = new X2()
             {
@@ -68,7 +68,7 @@ namespace PicView
         /// <summary>
         /// Loads Minus and adds it to the window
         /// </summary>
-        internal static void LoadMinus()
+        public static void LoadMinus()
         {
             minus = new Minus()
             {
@@ -89,7 +89,7 @@ namespace PicView
         /// <summary>
         /// Loads GalleryShortcut and adds it to the window
         /// </summary>
-        internal static void LoadGalleryShortcut()
+        public static void LoadGalleryShortcut()
         {
             galleryShortcut = new GalleryShortcut()
             {
@@ -109,7 +109,7 @@ namespace PicView
         /// <summary>
         /// Loads FileMenu and adds it to the window
         /// </summary>
-        internal static void LoadFileMenu()
+        public static void LoadFileMenu()
         {
             fileMenu = new FileMenu
             {
@@ -131,7 +131,7 @@ namespace PicView
         /// <summary>
         /// Loads ImageSettingsMenu and adds it to the window
         /// </summary>
-        internal static void LoadImageSettingsMenu()
+        public static void LoadImageSettingsMenu()
         {
             imageSettingsMenu = new ImageSettings
             {
@@ -153,7 +153,7 @@ namespace PicView
         /// <summary>
         /// Loads QuickSettingsMenu and adds it to the window
         /// </summary>
-        internal static void LoadQuickSettingsMenu()
+        public static void LoadQuickSettingsMenu()
         {
             quickSettingsMenu = new QuickSettingsMenu
             {
@@ -177,7 +177,7 @@ namespace PicView
         /// <summary>
         /// Loads FunctionsMenu and adds it to the window
         /// </summary>
-        internal static void LoadToolsAndEffectsMenu()
+        public static void LoadToolsAndEffectsMenu()
         {
             toolsAndEffectsMenu = new ToolsAndEffectsMenu
             {
@@ -201,7 +201,7 @@ namespace PicView
         /// <summary>
         /// Loads TooltipStyle and adds it to the window
         /// </summary>
-        internal static void LoadTooltipStyle()
+        public static void LoadTooltipStyle()
         {
             sexyToolTip = new SexyToolTip
             {
@@ -220,7 +220,7 @@ namespace PicView
         /// <summary>
         /// Loads AutoScrollSign and adds it to the window
         /// </summary>
-        internal static void LoadAutoScrollSign()
+        public static void LoadAutoScrollSign()
         {
             autoScrollSign = new AutoScrollSign
             {
@@ -242,7 +242,7 @@ namespace PicView
         /// <summary>
         /// Loads Croppingtool and adds it to the window
         /// </summary>
-        internal static void LoadCroppingTool()
+        public static void LoadCroppingTool()
         {
             cropppingTool = new CroppingTool
             {

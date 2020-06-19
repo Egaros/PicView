@@ -76,9 +76,6 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="PicGallery\PicGalleryLogic.cs~RF57f3b96.TMP" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\fonts\Aller_Rg.ttf" />
     <Resource Include="Resources\fonts\Aller_Bd.ttf" />
     <Resource Include="Resources\fonts\Aller_BdIt.ttf" />
@@ -118,25 +115,16 @@
     </FileAssociation>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Magick.NET-Q16-x64" Version="7.19.0.1" />
-    <PackageReference Include="Magick.NET.SystemDrawing" Version="2.0.0" />
-    <PackageReference Include="Magick.NET.SystemWindowsMedia" Version="1.0.1" />
-    <PackageReference Include="Microsoft-WindowsAPICodePack-Core" Version="1.1.4" />
-    <PackageReference Include="Microsoft-WindowsAPICodePack-Shell" Version="1.1.4" />
-    <PackageReference Include="Microsoft-WindowsAPICodePack-ShellExtensions" Version="1.1.4" />
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="PicViewCroppingImageLibrary" Version="1.0.7" />
-    <PackageReference Include="SkiaSharp" Version="1.68.3" />
-    <PackageReference Include="SkiaSharp.Views.WPF" Version="1.68.3" />
     <PackageReference Include="System.Buffers" Version="4.5.1" />
     <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
     <PackageReference Include="System.Memory" Version="4.5.4" />
     <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.7.1" />
-    <PackageReference Include="WpfScreenHelper" Version="0.4.0" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Properties\Settings.Designer.cs">
@@ -158,9 +146,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Update="Editing\PicViewCroppingImageLibrary.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -181,17 +166,26 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Misc\PsEffects\**">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="PicViewCroppingImageLibrary">
       <HintPath>PicViewCroppingImageLibrary.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PicView.Editing\PicView.Editing.csproj" />
+    <ProjectReference Include="..\PicView.FileHandling\PicView.FileHandling.csproj" />
+    <ProjectReference Include="..\PicView.Galleries\PicView.Galleries.csproj" />
+    <ProjectReference Include="..\PicView.ImageHandling\PicView.ImageHandling.csproj" />
+    <ProjectReference Include="..\PicView.Library\PicView.Library.csproj" />
+    <ProjectReference Include="..\PicView.Navigation\PicView.Navigation.csproj" />
+    <ProjectReference Include="..\PicView.OS_Integration\PicView.OS_Integration.csproj" />
+    <ProjectReference Include="..\PicView.Shortcuts\PicView.Shortcuts.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Navigation\" />
+    <Folder Include="tmp\" />
   </ItemGroup>
   <PropertyGroup>
     <FileVersion>0.9.8.7</FileVersion>

@@ -9,10 +9,10 @@ using static PicView.Tooltip;
 
 namespace PicView
 {
-    internal static class Configs
+    public static class Configs
     {
 
-        internal static void ChangeSorting(short sorting)
+        public static void ChangeSorting(short sorting)
         {
             if (Properties.Settings.Default.SortPreference == sorting)
             {
@@ -119,7 +119,7 @@ namespace PicView
         }
 
 
-        internal static void SetScrolling(object sender, RoutedEventArgs e)
+        public static void SetScrolling(object sender, RoutedEventArgs e)
         {
             var settingscm = cm.Items[7] as MenuItem;
             var scrollcm = settingscm.Items[1] as MenuItem;
@@ -139,13 +139,13 @@ namespace PicView
             }
         }
 
-        internal static void SetScrolling(bool value)
+        public static void SetScrolling(bool value)
         {
             Properties.Settings.Default.ScrollEnabled = value;
             SetScrolling(null, null);
         }
 
-        internal static void SetLooping(object sender, RoutedEventArgs e)
+        public static void SetLooping(object sender, RoutedEventArgs e)
         {
             var settingscm = cm.Items[7] as MenuItem;
             var loopcm = settingscm.Items[0] as MenuItem;
@@ -165,19 +165,19 @@ namespace PicView
             }
         }
 
-        internal static void SetAutoFit(object sender, RoutedEventArgs e)
+        public static void SetAutoFit(object sender, RoutedEventArgs e)
         {
             if (GalleryFunctions.IsOpen) { return; }
             SetScalingBehaviour(!Properties.Settings.Default.AutoFitWindow, Properties.Settings.Default.FillImage);
         }
 
-        internal static void SetAutoFill(object sender, RoutedEventArgs e)
+        public static void SetAutoFill(object sender, RoutedEventArgs e)
         {
             if (GalleryFunctions.IsOpen) { return; }
             SetScalingBehaviour(Properties.Settings.Default.AutoFitWindow, !Properties.Settings.Default.FillImage);
         }
 
-        internal static void SetScalingBehaviour(bool windowBehaviour, bool fill)
+        public static void SetScalingBehaviour(bool windowBehaviour, bool fill)
         {
             if (windowBehaviour)
             {
@@ -204,14 +204,14 @@ namespace PicView
             ScaleImage.TryFitImage();
         }
 
-        internal static void SetBorderColorEnabled(object sender, RoutedEventArgs e)
+        public static void SetBorderColorEnabled(object sender, RoutedEventArgs e)
         {
             bool value = Properties.Settings.Default.WindowBorderColorEnabled ? false : true;
             Properties.Settings.Default.WindowBorderColorEnabled = value;
             Utilities.UpdateColor(!value);
         }
 
-        internal static void SetSlidetimer()
+        public static void SetSlidetimer()
         {
             switch (Properties.Settings.Default.SlideTimer.ToString("0"))
             {

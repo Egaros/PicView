@@ -20,9 +20,9 @@ using static PicView.UC;
 
 namespace PicView
 {
-    internal static class StartLoading
+    public static class StartLoading
     {
-        internal static void PreStart()
+        public static void PreStart()
         {
 #if DEBUG
             Trace.Listeners.Add(new TextWriterTraceListener("Debug.log"));
@@ -52,7 +52,7 @@ namespace PicView
             AjaxLoadingStart();
         }
 
-        internal static void Start()
+        public static void Start()
         {
 
 #if DEBUG

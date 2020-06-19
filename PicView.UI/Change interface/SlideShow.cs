@@ -7,12 +7,12 @@ using static PicView.WindowLogic;
 
 namespace PicView
 {
-    internal static class SlideShow
+    public static class SlideShow
     {
         /// <summary>
         /// Maximize and removes Interface and start timer for slideshow.
         /// </summary>
-        internal static void StartSlideshow()
+        public static void StartSlideshow()
         {
             if (Pics.Count == 0)
             {
@@ -44,7 +44,7 @@ namespace PicView
             _ = NativeMethods.SetThreadExecutionState(NativeMethods.ES_CONTINUOUS | NativeMethods.ES_DISPLAY_REQUIRED); // Stop screensaver when running
         }
 
-        internal static void StopSlideshow()
+        public static void StopSlideshow()
         {
             SlideTimer.Stop();
 
@@ -61,7 +61,7 @@ namespace PicView
         /// </summary>
         /// <param name="server"></param>
         /// <param name="e"></param>
-        internal static async void SlideTimer_Elapsed(object server, ElapsedEventArgs e)
+        public static async void SlideTimer_Elapsed(object server, ElapsedEventArgs e)
         {
             await mainWindow.Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(() =>
             {

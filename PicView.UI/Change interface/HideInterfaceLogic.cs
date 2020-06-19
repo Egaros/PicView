@@ -7,13 +7,13 @@ using static PicView.UC;
 
 namespace PicView
 {
-    internal static class HideInterfaceLogic
+    public static class HideInterfaceLogic
     {
 
         /// <summary>
         /// Toggle between hidden interface and default
         /// </summary>
-        internal static void ToggleInterface()
+        public static void ToggleInterface()
         {
             if (Properties.Settings.Default.PicGallery == 2 && GalleryFunctions.IsOpen)
             {
@@ -36,7 +36,7 @@ namespace PicView
             Close_UserControls();
         }
 
-        internal static void ShowStandardInterface()
+        public static void ShowStandardInterface()
         {
             Properties.Settings.Default.ShowInterface = true;
 
@@ -50,7 +50,7 @@ namespace PicView
             }
         }
 
-        internal static void ShowMinimalInterface()
+        public static void ShowMinimalInterface()
         {
             ShowTopandBottom(false);
             ShowNavigation(true);
@@ -64,7 +64,7 @@ namespace PicView
             }
         }
 
-        internal static void ShowTopandBottom(bool show)
+        public static void ShowTopandBottom(bool show)
         {
             if (show)
             {
@@ -86,7 +86,7 @@ namespace PicView
         /// Toggle alternative layout navigation 
         /// </summary>
         /// <param name="show"></param>
-        internal static void ShowNavigation(bool show)
+        public static void ShowNavigation(bool show)
         {
             if (clickArrowLeft == null && clickArrowRight == null && x2 == null && minus == null)
             {
@@ -109,7 +109,7 @@ namespace PicView
             }
         }
 
-        internal static void ShowShortcuts(bool show)
+        public static void ShowShortcuts(bool show)
         {
             if (galleryShortcut == null)
             {
@@ -133,7 +133,7 @@ namespace PicView
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        internal static void Interface_MouseEnter(object sender, MouseEventArgs e)
+        public static void Interface_MouseEnter(object sender, MouseEventArgs e)
         {
             if (!activityTimer.Enabled || AutoScrolling)
             {
@@ -146,7 +146,7 @@ namespace PicView
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        internal static void Interface_MouseEnter_Negative(object sender, MouseEventArgs e)
+        public static void Interface_MouseEnter_Negative(object sender, MouseEventArgs e)
         {
             // Start timer when mouse enters
             activityTimer.Stop();
@@ -159,7 +159,7 @@ namespace PicView
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        internal static void Interface_MouseMove(object sender, MouseEventArgs e)
+        public static void Interface_MouseMove(object sender, MouseEventArgs e)
         {
             if (AutoScrolling)
             {
@@ -195,7 +195,7 @@ namespace PicView
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        internal static void Interface_MouseLeave(object sender, MouseEventArgs e)
+        public static void Interface_MouseLeave(object sender, MouseEventArgs e)
         {
             // Start timer when mouse leaves mainwindow
             //activityTimer.Start();

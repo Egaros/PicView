@@ -7,13 +7,13 @@ using System.Windows.Shapes;
 
 namespace PicView
 {
-    internal static class AnimationHelper
+    public static class AnimationHelper
     {
         //private static DoubleAnimation da = new DoubleAnimation();
         private static readonly ColorAnimation ccAnim = new ColorAnimation { Duration = TimeSpan.FromSeconds(.35) };
 
         #region Fade
-        internal static void Fade(UIElement element, double to, Duration duration)
+        public static void Fade(UIElement element, double to, Duration duration)
         {
             var da = new DoubleAnimation()
             {
@@ -23,7 +23,7 @@ namespace PicView
             element.BeginAnimation(UIElement.OpacityProperty, da);
         }
 
-        internal static void Fade(UIElement element, Duration duration, TimeSpan begintime, double from, double to)
+        public static void Fade(UIElement element, Duration duration, TimeSpan begintime, double from, double to)
         {
             var da = new DoubleAnimation()
             {
@@ -38,21 +38,21 @@ namespace PicView
 
         #region Color Events
 
-        internal static void MouseLeaveColorEvent(byte a, byte r, byte g, byte b, Brush brush, bool alpha)
+        public static void MouseLeaveColorEvent(byte a, byte r, byte g, byte b, Brush brush, bool alpha)
         {
             ccAnim.From = !alpha ? GetPrefferedColorOver() : GetPrefferedColorOverAlpha();
             ccAnim.To = Color.FromArgb(a, r, g, b);
             brush.BeginAnimation(SolidColorBrush.ColorProperty, ccAnim);
         }
 
-        internal static void MouseOverColorEvent(byte a, byte r, byte g, byte b, Brush brush, bool alpha)
+        public static void MouseOverColorEvent(byte a, byte r, byte g, byte b, Brush brush, bool alpha)
         {
             ccAnim.From = Color.FromArgb(a, r, g, b);
             ccAnim.To = !alpha ? GetPrefferedColorOver() : GetPrefferedColorOverAlpha();
             brush.BeginAnimation(SolidColorBrush.ColorProperty, ccAnim);
         }
 
-        internal static void PreviewMouseLeftButtonDownColorEvent(Brush brush, bool alpha)
+        public static void PreviewMouseLeftButtonDownColorEvent(Brush brush, bool alpha)
         {
             if (!alpha)
             {
@@ -67,7 +67,7 @@ namespace PicView
             brush.BeginAnimation(SolidColorBrush.ColorProperty, ccAnim);
         }
 
-        internal static void MouseLeaveColorEvent(byte a, byte r, byte g, byte b, Brush brush, int colortheme)
+        public static void MouseLeaveColorEvent(byte a, byte r, byte g, byte b, Brush brush, int colortheme)
         {
             switch (colortheme)
             {
@@ -113,7 +113,7 @@ namespace PicView
             brush.BeginAnimation(SolidColorBrush.ColorProperty, ccAnim);
         }
 
-        internal static void MouseEnterColorEvent(byte a, byte r, byte g, byte b, Brush brush, int colortheme)
+        public static void MouseEnterColorEvent(byte a, byte r, byte g, byte b, Brush brush, int colortheme)
         {
             ccAnim.From = Color.FromArgb(a, r, g, b);
             switch (colortheme)
@@ -159,7 +159,7 @@ namespace PicView
             brush.BeginAnimation(SolidColorBrush.ColorProperty, ccAnim);
         }
 
-        internal static void PreviewMouseLeftButtonDownColorEvent(Brush brush, int colortheme)
+        public static void PreviewMouseLeftButtonDownColorEvent(Brush brush, int colortheme)
         {
             switch (colortheme)
             {
@@ -216,28 +216,28 @@ namespace PicView
             brush.BeginAnimation(SolidColorBrush.ColorProperty, ccAnim);
         }
 
-        internal static void MouseEnterBgColor(Brush brush)
+        public static void MouseEnterBgColor(Brush brush)
         {
             ccAnim.From = Color.FromArgb(0, 0, 0, 0);
             ccAnim.To = Fields.backgroundBorderColor;
             brush.BeginAnimation(SolidColorBrush.ColorProperty, ccAnim);
         }
 
-        internal static void MouseLeaveBgColor(Brush brush)
+        public static void MouseLeaveBgColor(Brush brush)
         {
             ccAnim.From = Fields.backgroundBorderColor;
             ccAnim.To = Color.FromArgb(0, 0, 0, 0);
             brush.BeginAnimation(SolidColorBrush.ColorProperty, ccAnim);
         }
 
-        internal static void MouseEnterBgTexColor(Brush brush)
+        public static void MouseEnterBgTexColor(Brush brush)
         {
             ccAnim.From = Color.FromArgb(0, 0, 0, 0);
             ccAnim.To = Color.FromArgb(100, 75, 75, 75);
             brush.BeginAnimation(SolidColorBrush.ColorProperty, ccAnim);
         }
 
-        internal static void MouseLeaveBgTexColor(Brush brush)
+        public static void MouseLeaveBgTexColor(Brush brush)
         {
             ccAnim.From = Color.FromArgb(100, 75, 75, 75);
             ccAnim.To = Color.FromArgb(0, 0, 0, 0);
@@ -250,7 +250,7 @@ namespace PicView
 
         #region Return Color
 
-        internal static Color GetPrefferedColorOver()
+        public static Color GetPrefferedColorOver()
         {
             switch (Properties.Settings.Default.ColorTheme)
             {
@@ -283,7 +283,7 @@ namespace PicView
             }
         }
 
-        internal static Color GetPrefferedColorDown()
+        public static Color GetPrefferedColorDown()
         {
             switch (Properties.Settings.Default.ColorTheme)
             {
@@ -317,7 +317,7 @@ namespace PicView
 
         #region Alpha
 
-        internal static Color GetPrefferedColorDownAlpha()
+        public static Color GetPrefferedColorDownAlpha()
         {
             switch (Properties.Settings.Default.ColorTheme)
             {
@@ -397,7 +397,7 @@ namespace PicView
             }
         }
 
-        internal static Color GetPrefferedColorOverAlpha()
+        public static Color GetPrefferedColorOverAlpha()
         {
             switch (Properties.Settings.Default.ColorTheme)
             {
@@ -485,7 +485,7 @@ namespace PicView
 
         #region Size Animation
 
-        internal static void HoverSizeAnim(PicGalleryItem item, bool unHover, double from, double to)
+        public static void HoverSizeAnim(PicGalleryItem item, bool unHover, double from, double to)
         {
             if (item.Id == Fields.FolderIndex)
             {
